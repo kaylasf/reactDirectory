@@ -8,8 +8,9 @@ import Form from "./components/Form";
 class App extends Component {
   // Setting this.state.directory to the directory json array
   state = {
-    directory,
-    firstName: ''
+   
+    firstName: '',
+    dir: directory
   };
  
   handleInputChange = event => {
@@ -23,24 +24,39 @@ class App extends Component {
   };
 
   handleFormSubmit = (event) => {
-    
     this.setState({
       firstName: ""
     });
     
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-
+    
+    let result = "";
+   
     // Alert the user their first and last name, clear `this.state.firstName` clearing the inputs
-  
     if(this.state.firstName !== ""  ){
-      alert(`Name: ${directory[0].name}`);
+     
+
       const checkName = this.state.firstName.toLowerCase()
       console.log(checkName)
-      const directory = this.state.directory.filter(friend => friend.includes({checkName}))
-      this.setState({directory})
-      console.log(directory[0].name)
-      console.log(directory)
+
+      let dir = directory.filter(friend => friend.name.toLowerCase().includes(checkName))
+
+      console.log(dir)
+
+      // const userTyped = directoryy.filter(user = user.name.includes(checkName))
+      // console.log(userTyped)
+      // const directory = this.state.directory.filter(friend => friend.name.includes({checkName}))
+      // this.state.directory.filter(player => player.name.includes(checkName)).map(searchedPlayers => {
+      //   return(
+      //     <tr key={searchedPlayers.name}>
+      //       <td>{searchedPlayers.name}</td>
+      //     </tr>
+      //   );
+      // })
+      this.setState({dir})
+ 
+      
 
 
     }
@@ -72,7 +88,9 @@ class App extends Component {
         </form>
       </div>
         
-        {this.state.directory.map(friend => (
+
+
+        {this.state.dir.map(friend => (
          
           
           // <Form name={friend.name}/>,
@@ -86,7 +104,7 @@ class App extends Component {
           //   location={friend.location} 
           // />
 
-
+         
           <div className="card">
           <div className="img-container">
             <img alt={friend.name} src={friend.image} />
