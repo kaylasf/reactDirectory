@@ -44,16 +44,7 @@ class App extends Component {
 
       console.log(dir)
 
-      // const userTyped = directoryy.filter(user = user.name.includes(checkName))
-      // console.log(userTyped)
-      // const directory = this.state.directory.filter(friend => friend.name.includes({checkName}))
-      // this.state.directory.filter(player => player.name.includes(checkName)).map(searchedPlayers => {
-      //   return(
-      //     <tr key={searchedPlayers.name}>
-      //       <td>{searchedPlayers.name}</td>
-      //     </tr>
-      //   );
-      // })
+      
       this.setState({dir})
  
       
@@ -64,7 +55,6 @@ class App extends Component {
   };
    
 
-  // Map over this.state.directory and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
