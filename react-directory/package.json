@@ -1,5 +1,5 @@
 {
-  "homepage": "https://kaylasf.github.io/reactDirectory/",
+  "homepage": "https://kaylasf.github.io/react-directory",
   "name": "react-directory",
   "version": "0.1.0",
   "private": true,
@@ -34,7 +34,7 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies":{
-    "gh.pages":"^2.0.1"
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
